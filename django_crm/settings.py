@@ -38,8 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'django_filters'
+
+    'accounts.apps.AccountsConfig',
+
+    'api.apps.ApiConfig',
+
+    'django_filters',
+    
+    'rest_framework',
+
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +87,7 @@ WSGI_APPLICATION = 'django_crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_test',
+        'NAME': 'django_crm',
         'USER': 'postgres',
         'PASSWORD': '1995',
         'HOST': 'localhost',
@@ -133,3 +141,14 @@ STATICFILES_DIRS=[
 ]
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/images')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#SMTP Configuration
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_PASS')
