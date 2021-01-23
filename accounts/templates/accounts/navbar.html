@@ -32,8 +32,5 @@
     {%if request.user.is_authenticated%}
       <span class="hello-msg">Hello, {{request.user}}</span>
       <span><a class="hello-msg btn btn-outline-secondary" href="{%url 'logout'%}">Logout</a></span>
-    {%else%}
-      <span><a class="hello-msg" href="{%url 'login'%}">Login</a></span>
-      <span><a class="hello-msg" href="{%url 'register'%}">Register</a></span>
     {%endif%}
   </nav>

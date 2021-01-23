@@ -27,7 +27,7 @@
 		<div class="card card-body">
 			<form method="POST" action="" enctype="multipart/form-data">
 				{%csrf_token%}
-				{{form | crispy}}
+				{{form.as_p}}
 				<input class="btn btn-primary" type="submit" value="Update Information">
 			</form>
 		</div>
