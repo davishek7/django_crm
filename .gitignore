@@ -1,6 +1,3 @@
 __pycache__
 .vscode/
-Pipfile
-Pipfile.lock
-static/images
 .env
