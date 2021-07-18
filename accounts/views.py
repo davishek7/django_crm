@@ -76,7 +76,7 @@ def logoutUser(request):
 @admin_only
 def home(request):
     orders=Order.objects.all()
-    customers=Customer.objects.all()
+    customers=Customer.objects.all().exclude(user=request.user)
 
     total_customers=customers.count()
 
